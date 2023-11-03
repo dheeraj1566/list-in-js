@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <!-- <script src="index.js"></script> -->
+    <!-- <script src="string_methods.js"></script> -->
+
+    <div id="wrapper">
+
+    </div>
+    <script>
+        const teams = [
+            { team: "India", players: ["virat", "rohit", "jadeja"] },
+            { team: "Pakistan", players: ["baber", "afridi", "akmal", "zunaid"] },
+            { team: "Australia", players: ["warner", "smith", "cumins"] },
+            {
+                team: "south Africa",
+                players: ["nitin", "Du Plessis", "De Villiers", "Rabada"],
+            }
+        ]
+        const warp=document.querySelector("#wrapper")
+
+
+        for(i=0; i<teams.length; i++){
+        const teamdiv=document.createElement("div")
+        const teamname=document.createElement("h2")
+        const teamdplayer=document.createElement("ul")
+
+        teamdiv.innerhtml=teams[i].team
+        teamdiv.append(teamname)
+        teamname.append(teams[i].team)
+        // console.log(teamdiv)
+
+for(j=0;j<teams[i].players.length;j++){
+    const li=document.createElement("li")
+    li.innerHTML=teams[i].players[j]
+    teamdplayer.append(li)
+}
+teamdiv.append(teamdplayer)
+wrapper.append(teamdiv)
+
+        }
+    </script>
+</body>
+
+</html>
